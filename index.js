@@ -11,6 +11,16 @@ const today = new Date();
 const day = today.getDate();
 const month = today.getMonth() + 1;
 
+async function getInvoicesOnPage(page) {
+	for (let i = 1; i <= 10; i++) {
+		await page.click('#content > div.maincontentwhitebgbborder > div.brsoverview > table > tbody > tr:nth-child(' + i + ') > td:nth-child(6) > a');
+		await page.waitForNavigation();
+	
+		await page.click('.button-abschnitt button');
+		await page.waitForNavigation();
+	}
+}
+
 (async () => {
 	const browser = await puppeteer.launch();
 	const page = await browser.newPage();
@@ -28,16 +38,22 @@ const month = today.getMonth() + 1;
 
 	const cookies = await page.cookies();
 
-	await page.click('#content > div.maincontentwhitebgbborder > div.brsoverview > table > tbody > tr:nth-child(1) > td:nth-child(6) > a');
-	await page.waitForNavigation();
-	
-	await page.click('.button-abschnitt button');
+	await page.type('#vonDatumTag', '1');
+	await page.type('#vonDatumMonat', month.toString());
+	await page.click('.button-inside button');
 	await page.waitForNavigation();
 
-	await page.waitFor('#button\.blaettern\.next');
+	getInvoicesOnPage(page);
+
+	const nextButtonSelector = '.brsoverviewtable input[type=submit]'
+	if (page.$(nextButtonSelector)) {
+		await page.click(nextButtonSelector);
+		await page.waitForNavigation();
+
+		getInvoicesOnPage(page);
+	}
 
 	await navigationPromise;
-
 	await browser.close();
 
 	process.exit(0);
