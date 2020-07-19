@@ -7,6 +7,10 @@ if(process.argv.length < 4) {
     process.exit(0);
 }
 
+const today = new Date();
+const day = today.getDate();
+const month = today.getMonth() + 1;
+
 (async () => {
 	const browser = await puppeteer.launch();
 	const page = await browser.newPage();
@@ -29,6 +33,8 @@ if(process.argv.length < 4) {
 	
 	await page.click('.button-abschnitt button');
 	await page.waitForNavigation();
+
+	await page.waitFor('#button\.blaettern\.next');
 
 	await navigationPromise;
 
