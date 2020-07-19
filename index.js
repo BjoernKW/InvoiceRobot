@@ -2,23 +2,9 @@
 
 const puppeteer = require('puppeteer');
 
-if(process.argv.length < 4) {
-    console.log('Please provide username and password as arguments.');
-    process.exit(0);
-}
-
-const today = new Date();
-const day = today.getDate();
-const month = today.getMonth() + 1;
-
-async function getInvoicesOnPage(page) {
-	for (let i = 1; i <= 10; i++) {
-		await page.click('#content > div.maincontentwhitebgbborder > div.brsoverview > table > tbody > tr:nth-child(' + i + ') > td:nth-child(6) > a');
-		await page.waitForNavigation();
-	
-		await page.click('.button-abschnitt button');
-		await page.waitForNavigation();
-	}
+if(process.argv.length < 5) {
+    console.log('Please provide username, password, and invoice no. as arguments.');
+    process.exit(2);
 }
 
 (async () => {
@@ -38,20 +24,12 @@ async function getInvoicesOnPage(page) {
 
 	const cookies = await page.cookies();
 
-	await page.type('#vonDatumTag', '1');
-	await page.type('#vonDatumMonat', month.toString());
+	await page.type('#auftragsnr', process.argv[4]);
 	await page.click('.button-inside button');
 	await page.waitForNavigation();
 
-	getInvoicesOnPage(page);
-
-	const nextButtonSelector = '.brsoverviewtable input[type=submit]'
-	if (page.$(nextButtonSelector)) {
-		await page.click(nextButtonSelector);
-		await page.waitForNavigation();
-
-		getInvoicesOnPage(page);
-	}
+	await page.click('.button-abschnitt button');
+	await page.waitForNavigation();
 
 	await navigationPromise;
 	await browser.close();
