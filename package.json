@@ -1,0 +1,29 @@
+{
+  "name": "invoicefetcher",
+  "version": "1.0.0",
+  "description": "InvoiceFetcher",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BjoernKW/InvoiceFetcher.git"
+  },
+  "keywords": [
+    "invoice",
+    "automation"
+  ],
+  "author": "Björn Wilmsmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BjoernKW/InvoiceFetcher/issues"
+  },
+  "homepage": "https://github.com/BjoernKW/InvoiceFetcher#readme",
+  "dependencies": {
+    "puppeteer": "^5.2.0"
+  },
+  "bin": {
+    "invoice-fetcher": "./index.js"
+  }
+}
