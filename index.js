@@ -31,6 +31,11 @@ if(process.argv.length < 5) {
 	await page.click('.button-abschnitt button');
 	await page.waitForNavigation();
 
+	await page.click('.button-abschnitt .right button');
+	await page.waitForNavigation();
+
+	await page.screenshot({path: '1.png'});
+
 	await navigationPromise;
 	await browser.close();
 
