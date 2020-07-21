@@ -22,8 +22,6 @@ if(process.argv.length < 5) {
 	await page.click('.button-abschnitt button');
 	await page.waitForNavigation();
 
-	const cookies = await page.cookies();
-
 	await page.type('#auftragsnr', process.argv[4]);
 	await page.click('.button-inside button');
 	await page.waitForNavigation();
