@@ -26,7 +26,7 @@ const puppeteer = require('puppeteer');
 
     for (const invoiceNumber of invoiceNumbers) {
 		await page.type('#auftragsnr', invoiceNumber);
-		await page.click('.button-inside button');
+        await page.click('.button-inside button');
 		await page.waitForNavigation();
 
 		await page.click('.button-abschnitt button');
@@ -35,7 +35,7 @@ const puppeteer = require('puppeteer');
 		await page.click('.button-abschnitt .right button');
 		await page.waitForNavigation();
 
-		for (let i = 0; i < 3; i++) {
+		for (let i = 0; i < 2; i++) {
 			await page.click('.button-abschnitt .left button');
 			await page.waitForNavigation();
 		}
