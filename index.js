@@ -25,6 +25,8 @@ const puppeteer = require('puppeteer');
     await page.waitForNavigation();
 
     for (const invoiceNumber of invoiceNumbers) {
+        await page.evaluate( () => document.getElementById("auftragsnr").value = '');
+
 		await page.type('#auftragsnr', invoiceNumber);
         await page.click('.button-inside button');
 		await page.waitForNavigation();
