@@ -17,8 +17,9 @@ For more information about this tool and the rationale behind it pleaee have a l
 In order to install and use *InvoiceFetcher* all you have to do is clone this repository
 and then run ```npm link``` in the project's root folder.
 
-This will create a symlink to the main *index.js* under the name ```invoice-fetcher``` in your global ```node_modules```
-folder, which in turn will allow you to run the ```invoice-fetcher``` command from anywhere on your machine.
+This will create a symlink to the main ```index.js``` script under the name ```invoice-fetcher``` in your global
+```node_modules``` folder, which in turn will allow you to run the ```invoice-fetcher``` command from anywhere on your
+machine.
 
 Afterwards, you can simply run 
 
