@@ -9,11 +9,25 @@ delivery from password-protected customer portals and member sites.
 
 Currently, only the [Deutsche Bahn](https://www.bahn.de/) website is supported.
 
+For more information about this tool and the rationale behind it pleaee have a look at
+[this blog post](https://bjoernkw.com/2020/08/02/automating-fetching-incoming-invoices-with-puppeteer/).
+
 ## Usage
 
+In order to install and use *InvoiceFetcher* all you have to do is clone this repository
+and then run ```npm link``` in the project's root folder.
+
+This will create a symlink to the main *index.js* under the name ```invoice-fetcher``` in your global ```node_modules```
+folder, which in turn will allow you to run the ```invoice-fetcher``` command from anywhere on your machine.
+
+Afterwards, you can simply run 
+
 ```shell script
-$ invoice-fetcher username password invoice-no
+$ invoice-fetcher $DB_USERNAME $DB_PASSWORD $DB_INVOICE_NUMBERS
 ```
+
+in order for *InvoiceFetcher* to retrieve the Deutsche Bahn invoices specified by whitespace-delimited invoice numbers
+under ```$DB_INVOICE_NUMBERS```.
 
 ## Built With
 
