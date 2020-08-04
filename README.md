@@ -9,7 +9,7 @@ delivery from password-protected customer portals and member sites.
 
 Currently, only the [Deutsche Bahn](https://www.bahn.de/) website is supported.
 
-For more information about this tool and the rationale behind it pleaee have a look at
+For more information about this tool and the rationale behind it please have a look at
 [this blog post](https://bjoernkw.com/2020/08/02/automating-fetching-incoming-invoices-with-puppeteer/).
 
 ## Usage
