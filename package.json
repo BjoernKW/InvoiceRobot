@@ -24,6 +24,6 @@
     "puppeteer": "^5.2.0"
   },
   "bin": {
-    "invoice-fetcher": "./index.js"
+    "invoice-robot": "./index.js"
   }
 }
