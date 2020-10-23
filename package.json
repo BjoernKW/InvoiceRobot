@@ -1,14 +1,14 @@
 {
-  "name": "invoicefetcher",
+  "name": "invoicerobot",
   "version": "1.0.0",
-  "description": "InvoiceFetcher",
+  "description": "InvoiceRobot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BjoernKW/InvoiceFetcher.git"
+    "url": "git+https://github.com/BjoernKW/InvoiceRobot.git"
   },
   "keywords": [
     "invoice",
@@ -17,9 +17,9 @@
   "author": "Björn Wilmsmann",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BjoernKW/InvoiceFetcher/issues"
+    "url": "https://github.com/BjoernKW/InvoiceRobot/issues"
   },
-  "homepage": "https://github.com/BjoernKW/InvoiceFetcher#readme",
+  "homepage": "https://github.com/BjoernKW/InvoiceRobot#readme",
   "dependencies": {
     "puppeteer": "^5.2.0"
   },
