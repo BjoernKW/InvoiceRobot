@@ -1,6 +1,6 @@
 # InvoiceRobot
 
-[![CircleCI](https://circleci.com/gh/BjoernKW/InvoiceRobot.svg?style=shield)](https://circleci.com/gh/BjoernKW/InvoiceFetcher)
+[![CircleCI](https://circleci.com/gh/BjoernKW/InvoiceRobot.svg?style=shield)](https://circleci.com/gh/BjoernKW/InvoiceRobot)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Version](https://img.shields.io/github/package-json/v/BjoernKW/InvoiceRobot.svg?style=shield)
 
