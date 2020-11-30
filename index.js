@@ -5,7 +5,7 @@ if (process.argv.length < 5) {
     process.exit(2);
 }
 
-const invoiceNumbers = process.argv.slice(4);
+const invoiceNumbers = process.argv.slice(4)[0].split(' ');
 
 const puppeteer = require('puppeteer');
 
@@ -25,7 +25,7 @@ const puppeteer = require('puppeteer');
     await page.waitForNavigation();
 
     for (const invoiceNumber of invoiceNumbers) {
-        await page.evaluate( () => document.getElementById("auftragsnr").value = '');
+        await page.evaluate( () => document.getElementById('auftragsnr').value = '');
 
 		await page.type('#auftragsnr', invoiceNumber);
         await page.click('.button-inside button');

@@ -1,6 +1,6 @@
 {
   "name": "invoicerobot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "InvoiceRobot",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
     "puppeteer": "^5.2.0"
   },
   "bin": {
-    "invoice-robot": "./index.js"
+    "invoice-robot": "index.js"
   }
 }
